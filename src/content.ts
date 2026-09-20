@@ -38,7 +38,15 @@ export const pillars: Pillar[] = [
 
 const rawGuidesZh = import.meta.glob('../data/guides-zh/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
 const rawGuidesEn = import.meta.glob('../data/guides/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
-const rawGuides = { ...rawGuidesEn, ...rawGuidesZh }
+
+// 按文件名合并：中文译文覆盖英文原文，避免同一篇文章出现两份
+const rawGuides: Record<string, string> = {}
+for (const [file, raw] of Object.entries(rawGuidesEn)) {
+  rawGuides[file.split('/').pop()!] = raw
+}
+for (const [file, raw] of Object.entries(rawGuidesZh)) {
+  rawGuides[file.split('/').pop()!] = raw
+}
 
 function parseFrontMatter(raw: string) {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)
