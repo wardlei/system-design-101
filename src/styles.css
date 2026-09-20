@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
-
-:root { font-family: 'Manrope', sans-serif; color: #162934; background: #f3f0e8; font-synthesis: none; --ink: #162934; --muted: #71808a; --paper: #f3f0e8; --card: #f9f7f1; --orange: #df6b3f; --green: #325c50; --line: #d8d5cc; }
+:root { font-family: "Avenir Next", "PingFang SC", "Hiragino Sans GB", sans-serif; color: #162934; background: #f3f0e8; font-synthesis: none; --ink: #162934; --muted: #71808a; --paper: #f3f0e8; --card: #f9f7f1; --orange: #df6b3f; --green: #325c50; --line: #d8d5cc; }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--paper); }
 button, input { font: inherit; }

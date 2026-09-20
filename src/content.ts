@@ -36,7 +36,9 @@ export const pillars: Pillar[] = [
   { id: 'migration', number: '15', title: '迁移计划', english: 'Migration plan', description: '用可回滚的步骤把旧世界带到新世界。', keywords: ['migration', 'evolution', 'legacy', 'upgrade'] },
 ]
 
-const rawGuides = import.meta.glob('../data/guides/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
+const rawGuidesZh = import.meta.glob('../data/guides-zh/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
+const rawGuidesEn = import.meta.glob('../data/guides/*.md', { query: '?raw', import: 'default', eager: true }) as Record<string, string>
+const rawGuides = { ...rawGuidesEn, ...rawGuidesZh }
 
 function parseFrontMatter(raw: string) {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/)

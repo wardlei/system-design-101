@@ -6,6 +6,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "macos:build": "apps/macos/build.sh",
+    "macos:install": "apps/macos/install.sh",
     "update-readme": "tsx scripts/readme.ts"
   },
   "author": "",
