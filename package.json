@@ -3,13 +3,25 @@
   "version": "1.0.0",
   "description": "Explain complex systems using visuals and simple terms.",
   "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
     "update-readme": "tsx scripts/readme.ts"
   },
   "author": "",
   "license": "cc-by-nc-sd-4.0",
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.4.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
   "devDependencies": {
     "@types/node": "^22.13.14",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "gray-matter": "^4.0.3",
-    "tsx": "^4.19.3"
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2"
   }
 }
